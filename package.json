@@ -1,0 +1,33 @@
+{
+  "name": "darksky2influxdb",
+  "version": "1.0.0",
+  "description": "Stores weather forcecast data from darkskyapi into a influxdb database",
+  "main": "importForecast.js",
+  "dependencies": {
+    "config": "^1.25.1",
+    "influx": "^5.0.7",
+    "js-yaml": "^3.8.3",
+    "darksky-node": "^0.0.2",
+    "node-cron": "^1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node importForecast.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvenSommer/darksky2influxdb.git"
+  },
+  "keywords": [
+    "darkskyapi",
+    "influxdb",
+    "weather",
+    "forecast"
+  ],
+  "author": "SvenSommer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SvenSommer/darksky2influxdb/issues"
+  },
+  "homepage": "https://github.com/SvenSommer/darksky2influxdb#readme"
+}
