@@ -1,3 +1,12 @@
+
+/* darksky2influxdb
+ * Stores weather forcecast data from darkskyapi into a influxdb database
+ *
+ * By SvenSommer https://github.com/SvenSommer
+ * based on ErwinSteffens project https://github.com/ErwinSteffens/darksky-influxdb
+ * MIT Licensed.
+ */
+
 const Influx = require('influx'),
     config = require('config'),
     cron = require('node-cron'),
@@ -63,13 +72,8 @@ var getForecast = function () {
             var hourly = forecast.hourly;
 
             if (generalConfig.debug) {
-            //    console.dir(hourly)
+                console.dir(hourly)
             }
-
-
-
-            //console.dir(daily);
-
 
             console.log('Writing '+ hourly.data.length +' Datapoints to InfluxDB in Database "' + influxConfig.database + '" with measurement "forecast" on ' + influxConfig.host);
              for (var i = 0, len = hourly.data.length; i < len; ++i) {
@@ -124,8 +128,6 @@ var getForecast = function () {
                     console.log('Temperature    : ' + fc.temperature);
                     console.log('timestamp      : ' + fc.time + '000000000');
                     console.log('daytime        : ' + daytime);
-
-
                 }
 
                 influx.writePoints(points).catch(err => {
