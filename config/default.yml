@@ -1,0 +1,13 @@
+general:
+  debug: true
+  cron: '*/15 * * * *'
+darksky:
+  key: DARKSKY_KEY
+  units: auto
+  longitude: DARKSKY_LONGITUDE
+  latitude: DARKSKY_LATITUDE
+influxdb:
+  host: INFLUXDB_HOST
+  database: INFLUXDB_DATABASE
+  username: INFLUXDB_USERNAME
+password: INFLUXDB_PASSWORD
