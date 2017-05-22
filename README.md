@@ -32,6 +32,9 @@ Get your https://darksky.net/dev/register here.
 #### Influxdb
 Please follow the official installation documentation https://docs.influxdata.com/influxdb/v1.2/introduction/installation/
 
+#### Grafana
+If you want to visualise the data in a chart I can hardly reccomend [grafana](https://grafana.com/).
+
 ### Installing
 
 1. Enter cloned directory: `cd darksky2influxdb` and install dependencies `npm install`
@@ -72,6 +75,9 @@ influxdb:
 
 Start the import with `node importForecast.js` If you have given a valid cron interval in the configfile the programm will repeat the import automaticly.
 
+## Tested
+
+This is coded and tested on an RaspberryPi 3
 
 ## Authors
 
