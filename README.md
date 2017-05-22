@@ -6,7 +6,7 @@ This information can by used to display forecast data with [grafana](https://gra
 
 ## Preview
 
-![](https://github.com/SvenSommer/darksky2influxdb/forecast_preview.png?raw=true)
+![](https://github.com/SvenSommer/darksky2influxdb/blob/master/forecast_preview.png?raw=true)
 
 
 ## Getting Started
