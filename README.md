@@ -33,7 +33,7 @@ Get your https://darksky.net/dev/register here.
 Please follow the official installation documentation https://docs.influxdata.com/influxdb/v1.2/introduction/installation/
 
 #### Grafana
-If you want to visualise the data in a chart I can hardly reccomend [grafana](https://grafana.com/).
+If you want to visualise the data in a chart I can hardly reccomend [grafana](https://grafana.com/). <br> You can find my dashboard for import in `grafana\Weather - Forecast-Dashboard.json`.
 
 ### Installing
 
@@ -77,7 +77,7 @@ Start the import with `node importForecast.js` If you have given a valid cron in
 
 ## Tested
 
-This is coded and tested on an RaspberryPi 3
+This is coded and tested on a RaspberryPi 3
 
 ## Authors
 
