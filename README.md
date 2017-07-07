@@ -4,6 +4,8 @@ Stores weather forcecast data from Dark Sky Api into a influxdb database.
 
 This information can by used to display forecast data with [grafana](https://grafana.com/).
 
+<b>Tip:</b> [This blogpost](http://www.robstechlog.com/2017/06/30/personal-weather-chart-module/) describes the installation and setup for a personal weather chart using influxdb and grafana and step-by-step.
+
 ## Preview
 
 ![](https://github.com/SvenSommer/darksky2influxdb/blob/master/forecast_preview.png?raw=true)
