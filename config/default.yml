@@ -4,6 +4,7 @@ general:
 darksky:
   key: DARKSKY_KEY
   units: auto
+  language: en
   longitude: DARKSKY_LONGITUDE
   latitude: DARKSKY_LATITUDE
 influxdb:

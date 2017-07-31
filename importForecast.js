@@ -57,7 +57,7 @@ var getForecast = function () {
     darksky.forecast(darkskyConfig.latitude, darkskyConfig.longitude, {
         exclude: ['minutely', 'currently', 'alerts', 'flags'],
         units: darkskyConfig.units,
-        lang: 'de',
+        lang: darkskyConfig.language,
         extend: 'hourly'
 
     }, function (err, responseBody) {
