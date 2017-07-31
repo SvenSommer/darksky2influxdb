@@ -42,7 +42,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": 370,
+      "height": 245,
       "panels": [
         {
           "aliasColors": {
@@ -138,7 +138,7 @@
               "zindex": -3
             }
           ],
-          "span": 6,
+          "span": 8,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -569,6 +569,541 @@
               "show": false
             }
           ]
+        },
+        {
+          "aliasColors": {
+            "Bewölkung": "#2F575E",
+            "Daytime": "#DEDAF7",
+            "Intensity of precipitation": "#447EBC",
+            "Nacht": "#052B51",
+            "Nighttime": "#052B51",
+            "Percentage of sky with sun": "#EAB839",
+            "Regen": "#1F78C1",
+            "Regenmenge": "#1F78C1",
+            "Sonne": "#CCA300",
+            "Tag": "#DEDAF7",
+            "Tag_Nacht": "#511749",
+            "Temperatur": "#7EB26D",
+            "Temperature": "#7EB26D",
+            "The percentage of sky occluded by clouds": "#2F575E",
+            "Wind": "#2F575E",
+            "apparent Temperature": "#EF843C",
+            "gefühlte Temperatur": "#C15C17"
+          },
+          "bars": false,
+          "datasource": "${DS_WEATHER}",
+          "description": "http://robstechlog.com/2017/06/30/personal-weather-chart-module/",
+          "fill": 0,
+          "height": "",
+          "id": 4,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Temperature",
+              "fillBelowTo": "apparent Temperature",
+              "zindex": 2
+            },
+            {
+              "alias": "Wind Speed",
+              "lines": false,
+              "pointradius": 1,
+              "points": true,
+              "zindex": 2
+            },
+            {
+              "alias": "Percentage of sky with sun",
+              "bars": true,
+              "lines": false,
+              "stack": true,
+              "transform": "negative-Y",
+              "yaxis": 2,
+              "zindex": -2
+            },
+            {
+              "alias": "The percentage of sky occluded by clouds",
+              "bars": true,
+              "lines": false,
+              "stack": true,
+              "transform": "negative-Y",
+              "yaxis": 2,
+              "zindex": -2
+            },
+            {
+              "alias": "Intensity of precipitation",
+              "bars": true,
+              "lines": false,
+              "stack": true,
+              "transform": "negative-Y",
+              "yaxis": 2,
+              "zindex": -1
+            },
+            {
+              "alias": "Daytime",
+              "fill": 3,
+              "linewidth": 0,
+              "yaxis": 2,
+              "zindex": -3
+            },
+            {
+              "alias": "Nighttime",
+              "fill": 5,
+              "linewidth": 0,
+              "yaxis": 2,
+              "zindex": -3
+            }
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "apparent Temperature",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "apparent_temperature"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Temperature",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "temperature"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Wind Speed",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "wind_speed"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Probability of precipitation",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": true,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "precipProbability"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Intensity of precipitation",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "precipIntensity"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Relative humidity",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": true,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "humidity"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Percentage of sky with sun",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "query": "SELECT mean(\"cloud_cover\") FROM \"forecast\" WHERE $timeFilter GROUP BY time(1h) fill(null)",
+              "rawQuery": false,
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "sun_cover"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "The percentage of sky occluded by clouds",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1h"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "cloud_cover"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Daytime",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "daytime_show"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            },
+            {
+              "alias": "Nighttime",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "forecast",
+              "policy": "default",
+              "refId": "J",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "nightime_show"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "custom",
+              "fill": true,
+              "fillColor": "rgb(255, 0, 0)",
+              "line": true,
+              "lineColor": "rgb(65, 0, 0)",
+              "op": "lt",
+              "value": 0
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Weather Chart",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "celsius",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": "0",
+              "min": "-3",
+              "show": false
+            }
+          ]
         }
       ],
       "repeat": null,
@@ -728,6 +1263,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "Weather - Forecast",
-  "version": 78
+  "title": "Weather - Forecast en",
+  "version": 0
 }
